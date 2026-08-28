@@ -3,12 +3,10 @@
 import numpy as np
 from scipy import signal
 
-
 IQ_RATE = 240_000
 AUDIO_RATE = 48_000
 BAUD = 1_200
 SAMPLES_PER_BIT = AUDIO_RATE // BAUD
-
 
 def afsk_levels(iq):
     """Recebe IQ complex64 e gera candidatos de niveis AFSK."""

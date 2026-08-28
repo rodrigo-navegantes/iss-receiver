@@ -7,8 +7,7 @@
              decode_iss.py
                     |
                     v
-     receiver.dsp.fm_demodulate()
-          diferenca de fase FM
+       separa por diferenca de fase FM
                     |
                     v
        reamostragem 240 kHz -> 48 kHz
@@ -20,7 +19,7 @@
  detector AFSK: energia em 1200/2200 Hz
                     |
                     v
-             NRZI -> bits
+               NRZI -> bits
                     |
                     v
        flags HDLC -> bit unstuffing
@@ -37,14 +36,12 @@
 Depois de gravar o arquivo no GNU Radio:
 
 ```bash
-cd /home/rodrigo/Documents/IC/PdQSat/ISS
-python3 decode_iss.py /tmp/iss_145825_240k.c64 --sample-rate 240000
+python3 decode_iss.py nome_do_arquivo.c64 --sample-rate 240000
 ```
 
 Para verificar o receptor com um pacote sintético:
 
 ```bash
-cd /home/rodrigo/Documents/IC/PdQSat/ISS
 python3 -m unittest -v test_receiver.py
 ```
 
