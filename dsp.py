@@ -14,13 +14,11 @@ Fluxo deste modulo:
 import numpy as np
 from scipy import signal
 
-
 AUDIO_SAMPLE_RATE = 48_000
 BAUD = 1_200
-MARK_FREQUENCY = 1_200 # 1
-SPACE_FREQUENCY = 2_200 # 0
+MARK_FREQUENCY = 1_200              # 1
+SPACE_FREQUENCY = 2_200             # 0
 SAMPLES_PER_BIT = AUDIO_SAMPLE_RATE // BAUD
-
 
 def prepare_audio(audio):
     """Remove o nivel DC e preserva a faixa dos tons AFSK."""

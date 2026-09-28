@@ -20,13 +20,11 @@ def read_audio(filename):
             f"{AUDIO_SAMPLE_RATE} Hz."
         )
 
-    # Se o arquivo for estereo, transforma os dois canais em um canal mono.
     if audio.ndim == 2:
         audio = audio.mean(axis=1)
 
     audio = audio.astype(np.float32)
 
-    # Normalização das amostras
     peak = np.max(np.abs(audio)) if len(audio) else 0
     if peak > 0:
         audio /= peak
@@ -66,8 +64,6 @@ def print_frame(frame):
 
 
 def main():
-    """Executa o receptor para o WAV informado na linha de comando."""
-
     audio = read_audio(sys.argv[1])
     decoded_frames, candidate_frames = decode_audio(audio)
 
